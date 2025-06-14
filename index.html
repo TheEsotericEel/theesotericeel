@@ -8,14 +8,24 @@
 <body>
   <h1>Riffusion Prompt Formatter</h1>
   <textarea id="input" rows="6" cols="50" placeholder="Describe the music..."></textarea>
+  <br />
   <button onclick="formatPrompt()">Format Prompt</button>
-  <p><strong>Formatted:</strong> <span id="output"></span></p>
+  <p><strong>Formatted:</strong></p>
+  <pre id="output" style="white-space: pre-wrap;"></pre>
 
   <script>
-    function formatPrompt() {
+    async function formatPrompt() {
       const text = document.getElementById('input').value.trim();
-      const output = `riffusion, spectrogram style, ${text}`;
-      document.getElementById('output').textContent = output;
+      const response = await fetch("https://riffusion-api.the-esoteric-eel.workers.dev/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ prompt: text })
+      });
+
+      const result = await response.json();
+      document.getElementById('output').textContent = result.output || "Error";
     }
   </script>
 </body>
