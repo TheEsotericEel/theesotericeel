@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riffusion Prompt Formatter</title>
+</head>
+<body>
+  <h1>Riffusion Prompt Formatter</h1>
+  <textarea id="input" rows="6" cols="50" placeholder="Describe the music..."></textarea>
+  <button onclick="formatPrompt()">Format Prompt</button>
+  <p><strong>Formatted:</strong> <span id="output"></span></p>
+
+  <script>
+    function formatPrompt() {
+      const text = document.getElementById('input').value.trim();
+      const output = `riffusion, spectrogram style, ${text}`;
+      document.getElementById('output').textContent = output;
+    }
+  </script>
+</body>
+</html>
