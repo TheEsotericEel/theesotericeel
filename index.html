@@ -3,30 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Riffusion Prompt Formatter</title>
+  <title>theesotericeel</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 4rem; }
+    a { display: block; margin: 1rem 0; font-size: 1.25rem; color: blue; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <h1>Riffusion Prompt Formatter</h1>
-  <textarea id="input" rows="6" cols="50" placeholder="Describe the music..."></textarea>
-  <br />
-  <button onclick="formatPrompt()">Format Prompt</button>
-  <p><strong>Formatted:</strong></p>
-  <pre id="output" style="white-space: pre-wrap;"></pre>
-
-  <script>
-    async function formatPrompt() {
-      const text = document.getElementById('input').value.trim();
-      const response = await fetch("https://riffusion-api.the-esoteric-eel.workers.dev/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ prompt: text })
-      });
-
-      const result = await response.json();
-      document.getElementById('output').textContent = result.output || "Error";
-    }
-  </script>
+  <h1>Welcome to theesotericeel</h1>
+  <p>Select a tool:</p>
+  <a href="/etsy-optimizer/">Etsy Listing Optimizer</a>
+  <a href="/riffusion-formatter/">Riffusion Prompt Formatter</a>
 </body>
 </html>
