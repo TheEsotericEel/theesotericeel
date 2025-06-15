@@ -1,4 +1,4 @@
-## Hi there 👋
+## Howdy. I am not really a coder tbh, I cant remember my where I left my keys let alone another language or 3. I do however enjoy AI and I am working on some apps that will hopefully make life easier.
 
 <!--
 **TheEsotericEel/theesotericeel** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
